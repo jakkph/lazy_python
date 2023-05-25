@@ -14,3 +14,7 @@ file_list = list_files('/path/to/directory')
 json_data = json.dumps(file_list)
 
 print(json_data)
+
+with open('file_list.json', 'w') as f:
+    f.write(json_data)
+    
