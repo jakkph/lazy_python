@@ -1,5 +1,6 @@
 # This script is for listing files in a directory - sub_directory.
 # It uses the os module to list the files and generating a report for each file located.
+
 import os
 import json
 
