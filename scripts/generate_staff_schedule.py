@@ -1,8 +1,7 @@
 import pandas as pd
 import random
 import datetime
-from openpyxl import Workbook
-import pandas as pd
+from openpyxl import Workbook 
 
 start_date = pd.to_datetime("2023-06-02")
 end_date = pd.to_datetime("2023-12-31")
