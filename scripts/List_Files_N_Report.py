@@ -1,8 +1,9 @@
-# This script is for listing files in a directory - sub_directory.
-# It uses the os module to list the files and generating a report for each file located.
-
+import os
+import subprocess
+from PyPDF2 import PdfMerger
 import os
 import json
+
 
 def list_files(startpath):
     result = []
@@ -11,10 +12,12 @@ def list_files(startpath):
             result.append(os.path.join(root, file))
     return result
 
-file_list = list_files('/path/to/directory')
+
+file_list = list_files(".")
 json_data = json.dumps(file_list)
 
-print(json_data)
 
-with open('file_list.json', 'w') as f:
-    f.write(json_data)
+absolute_paths = [os.path.abspath(path) for path in file_list]
+
+for path in absolute_paths:
+    print(path)
